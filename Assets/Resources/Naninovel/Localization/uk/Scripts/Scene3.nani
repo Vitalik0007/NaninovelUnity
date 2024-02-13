@@ -1,0 +1,46 @@
+; English <en> to Ukrainian <uk> localization document for `Scene3` naninovel script
+
+# c84a4f53
+;     Player: Now I have nothing to do here!!! I should visit other locations!
+Player: Тут немає що робити. Повернусь на цю локацію пізніше!
+
+# 45b33c23
+;     Player: I have to find the ancient weapon.
+Player: Я повинна знайти цю древню реліквію.
+
+# 19bb0f7b
+;     @choice "Search for weapons" goto:.FindIInteractiveItem
+@choice "Шукати зброю" goto:.FindIInteractiveItem
+
+# 2ff66795
+;     @choice "I don't want to do this now" goto:Map
+@choice "Я не хочу робити цього зараз" goto:Map
+
+# 31d026f9
+; @choice handler:ButtonArea button:UI/InteractiveItems/ThirdItem pos:-650,0 set:InteractiveChoise="Weapon";Quest=3;QuestText="Task 3 - Go back to Location 2." goto:.SelectionProcessing
+@choice handler:ButtonArea button:UI/InteractiveItems/ThirdItem pos:-650,0 set:InteractiveChoise="Weapon";Quest=3;QuestText="Завдання 3 - Повернутись на Location2." goto:.SelectionProcessing
+
+# 98a21cbc
+; @choice handler:ButtonArea button:UI/InteractiveItems/FirstItem pos:-650,300 set:InteractiveChoise="Glasses" goto:.SelectionProcessing
+
+# 44af1e98
+; @choice handler:ButtonArea button:UI/InteractiveItems/SecondItem pos:650,0 set:InteractiveChoise="Headphones" goto:.SelectionProcessing
+
+# d50fa0f3
+; @choice handler:ButtonArea button:UI/InteractiveItems/FourthItem pos:650,300 set:InteractiveChoise="Axe" goto:.SelectionProcessing
+
+# 36cffeca
+;     Player: It's the same weapon that NPC2 was talking about. I need to show him this find.
+Player: Це ж та сама зброю, про яку розказував NPC2. Я повинна показати йому цю знахідку.
+
+# d1a587f4
+;     Player: Stylish glasses, but I don't need them now.
+Player: Стильні окуляри, але зараз вони мені не потрібні.
+
+# 2e884b18
+;     Player: I used to dream about headphones like this. Unfortunately, that time has passed.
+Player: Колись я мріяв про такі окуляри. Нажаль, зараз у мене інші бажання.
+
+# 52d3109c
+;     Player: It's a great axe. My father, a forester, could use it. But now I'm looking for something else.
+Player: Це дивовижна сокира. Моєму батькові, ліснику, вона б пригодилась. Але на даний момент я шукаю дещо інше.

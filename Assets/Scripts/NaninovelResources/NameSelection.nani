@@ -1,0 +1,6 @@
+@back Title time:0
+@bgm mainAudio volume:0.4
+@input PlayerName summary:"Write your name:"
+@stop
+@set Quest=0
+@goto Scene1

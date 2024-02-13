@@ -1,0 +1,15 @@
+#Map
+@hideAll
+@back Map time:0
+
+@if Quest<3
+    @choice handler:ButtonArea button:UI/MapButtons/Location1 pos:-650,0 goto:Scene1
+    @choice handler:ButtonArea button:UI/MapButtons/Location2 pos:0,-300 goto:Scene2
+    @choice handler:ButtonArea button:UI/MapButtons/Location3 pos:650,0 goto:Scene3
+    @stop
+@else
+    @choice handler:ButtonArea button:UI/MapButtons/Location1 pos:-650,0 goto:Scene1
+    @choice handler:ButtonArea button:UI/MapButtons/Location2 pos:0,-300 goto:Scene2
+    @choice handler:ButtonArea button:UI/MapButtons/Location3 pos:650,0 goto:.Map
+    @stop
+@endIf

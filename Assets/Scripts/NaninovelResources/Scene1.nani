@@ -1,0 +1,43 @@
+; Scene1.nani
+@hideAll
+@showUI MapButton
+@showUI QuestLog
+@back Location1
+
+#StartGame
+@if Quest==0
+    @char Player pos:10,0,0
+    @char NPC1.Default pos:90,0,0
+    NPC1.Default: Welcome, {PlayerName}! How are you doing?
+    Player: Hello. I'm fine, I just decided to go for a walk
+    NPC1.Default: I see. Listen, could you go to NPC2, he needs help?
+    @choice "Agree to NPC1's request" set:Quest=1;QuestText="Task 1 - Talk with NPC2." goto:Map
+    @choice "Come back to the conversation later" goto:Map
+    @stop
+@elseIf "Quest==1 || Quest==2 || Quest==3"
+    @char Player pos:50,0,0
+    Player: Now I have nothing to do here. I should visit other locations!
+    @stop
+@elseIf Quest==4
+    @char Player pos:10,0,0
+    @char NPC1.Default pos:90,0,0
+    @char NPC2.Default pos:80,0,0
+    Player: Here you are. I found this cool weapon.
+    NPC1.Default: You're doing great. Could you give me this weapon?
+    NPC2.Default: You don't need this weapon NPC1. Don't fool {PlayerName}. This weapon should be mine!
+    @choice "Give the weapon to NPC1" set:NPC2mood="Bad";NPC1mood="Good";Quest=5 goto:.StartGame
+    @choice "Give the weapon to NPC2" set:NPC2mood="Good";NPC1mood="Bad";Quest=5 goto:.StartGame
+    @choice "Keep the weapon for yourself" set:NPC2mood="Bad";NPC1mood="Bad";Quest=5 goto:.StartGame
+    @stop
+@elseIf Quest==5
+    @hideUI QuestLog
+    @hide NPC2
+    @char Player pos:10,0,0
+    @char NPC1.Default pos:90,0,0
+    @if NPC1mood=="Good"
+        NPC1.Happy: Thank you, friend, I will think of a way to use this weapon.
+    @elseIf NPC1mood=="Bad"
+        NPC1.Angry: Leave me alone, I don't want to talk with you!!!
+    @endIf
+    @stop
+@endIf

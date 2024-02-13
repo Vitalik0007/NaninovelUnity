@@ -1,0 +1,37 @@
+; Scene3.nani
+@hideAll
+@back Location3
+
+@if "Quest==0 || Quest==1"
+    @char Player pos:50,0,0
+    Player: Now I have nothing to do here!!! I should visit other locations!
+    @stop
+@elseIf Quest==2
+    @char Player pos:50,0,0
+    Player: I have to find the ancient weapon.
+    @choice "Search for weapons" goto:.FindIInteractiveItem
+    @choice "I don't want to do this now" goto:Map
+    @stop
+@endIf
+
+#FindIInteractiveItem
+@choice handler:ButtonArea button:UI/InteractiveItems/ThirdItem pos:-650,0 set:InteractiveChoise="Weapon";Quest=3;QuestText="Task 3 - Go back to Location 2." goto:.SelectionProcessing
+@choice handler:ButtonArea button:UI/InteractiveItems/FirstItem pos:-650,300 set:InteractiveChoise="Glasses" goto:.SelectionProcessing
+@choice handler:ButtonArea button:UI/InteractiveItems/SecondItem pos:650,0 set:InteractiveChoise="Headphones" goto:.SelectionProcessing
+@choice handler:ButtonArea button:UI/InteractiveItems/FourthItem pos:650,300 set:InteractiveChoise="Axe" goto:.SelectionProcessing
+@stop
+
+#SelectionProcessing
+@if InteractiveChoise=="Weapon"
+    Player: It's the same weapon that NPC2 was talking about. I need to show him this find.
+    @goto Map
+@elseIf InteractiveChoise=="Glasses"
+    Player: Stylish glasses, but I don't need them now.
+    @goto .FindIInteractiveItem
+@elseIf InteractiveChoise=="Headphones"
+    Player: I used to dream about headphones like this. Unfortunately, that time has passed.
+    @goto .FindIInteractiveItem
+@elseIf InteractiveChoise=="Axe"
+    Player: It's a great axe. My father, a forester, could use it. But now I'm looking for something else.
+    @goto .FindIInteractiveItem
+@endIf

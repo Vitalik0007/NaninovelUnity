@@ -1,0 +1,57 @@
+; English <en> to Ukrainian <uk> localization document for `Scene1` naninovel script
+
+# 42b18a05
+;     NPC1.Default: Welcome, {PlayerName}! How are you doing?
+NPC1.Default: Вітаю, {PlayerName}! Як у тебе справи?
+
+# e030dcb0
+;     Player: Hello. I'm fine, I just decided to go for a walk
+Player: Привіт. Все чудово, вирішила прогулятись.
+
+# d9ce12fb
+;     NPC1.Default: I see. Listen, could you go to NPC2, he needs help?
+NPC1.Default: Ясненько. Слухай, чи не могла б ти сходити до NPC2? Йому потрібна допомога.
+
+# 82456e0b
+;     @choice "Agree to NPC1's request" set:Quest=1;QuestText="Task 1 - Talk with NPC2." goto:Map
+@choice "Погодитись на прохання NPC1" set:Quest=1;QuestText="Завдання 1 - Поговорити з NPC2." goto:Map
+
+# 38376b3d
+;     @choice "Come back to the conversation later" goto:Map
+@choice "Повернутись до розмови пізніше" goto:Map
+
+# df14397b
+;     Player: Now I have nothing to do here. I should visit other locations!
+Player: Зараз я не маю що робити тут. Потрібно сходити на іншу локацію!
+
+# 10ccd21a
+;     Player: Here you are. I found this cool weapon.
+Player: Ось ви де. Я знайшла цю круту зброю.
+
+# ef4d7
+;     NPC1.Default: You're doing great. Could you give me this weapon?
+NPC1.Default: Ти молодець. Чи не могла б ти віддати її мені?
+
+# 41af65da
+;     NPC2.Default: You don't need this weapon NPC1. Don't fool {PlayerName}. This weapon should be mine!
+NPC2.Default: Тобі ж не потрібна ця зброя NPC1. Не обманюй {PlayerName}. Ця зброя повинна бути моєю!
+
+# 43bf2c9c
+;     @choice "Give the weapon to NPC1" set:NPC2mood="Bad";NPC1mood="Good";Quest=5 goto:.StartGame
+@choice "Віддати зброю NPC1" set:NPC2mood="Bad";NPC1mood="Good";Quest=5 goto:.StartGame
+
+# f6148ac2
+;     @choice "Give the weapon to NPC2" set:NPC2mood="Good";NPC1mood="Bad";Quest=5 goto:.StartGame
+@choice "Віддати зброю NPC2" set:NPC2mood="Good";NPC1mood="Bad";Quest=5 goto:.StartGame
+
+# 10845e54
+;     @choice "Keep the weapon for yourself" set:NPC2mood="Bad";NPC1mood="Bad";Quest=5 goto:.StartGame
+@choice "Залишити зброю собі" set:NPC2mood="Bad";NPC1mood="Bad";Quest=5 goto:.StartGame
+
+# 653b6675
+;         NPC1.Happy: Thank you, friend, I will think of a way to use this weapon.
+NPC1.Happy: Дякую тобі. Я придумаю, що робити з нею)
+
+# 56b2e094
+;         NPC1.Angry: Leave me alone, I don't want to talk with you!!!
+NPC1.Angry: Залиш мене, я не маю бажання розмовляти з тобою!!!

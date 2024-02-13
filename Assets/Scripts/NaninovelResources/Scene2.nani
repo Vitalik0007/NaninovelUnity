@@ -1,0 +1,47 @@
+; Scene2.nani
+@hideAll
+@back Location2
+
+@if Quest==1
+    @char Player pos:10,0,0
+    @char NPC2 pos:90,0,0
+    NPC2: Ah, {PlayerName}! Have you come to help me?
+    Player: Sure, let's play this mini-game.
+    @choice "Start mini-game" goto:.MiniGame
+    @stop
+
+    #MiniGame
+    @hideChars
+    @miniGame
+
+    #DialogAfterGame
+    @char Player pos:10,0,0
+    @char NPC2 pos:90,0,0
+    Player: Damn, that was cool.
+    NPC2: I agree {PlayerName}, we did a great job.
+    NPC2: By the way, if you're not busy, you can go to Location3 and look for the ancient weapon that my friends told me about.
+    Player: Wow, what kind of weapon is this?
+    NPC2: People say it's a powerful weapon that can make anyone invincible.
+    @choice "Go in search of weapons" set:Quest=2;QuestText="Task 2 - Find an ancient weapon." goto:Map
+    @choice "Postpone the search for later" goto:Map
+    @stop
+@elseIf "Quest==0 || Quest==2 || Quest==4"
+    @char Player pos:50,0,0
+    Player: Now I have nothing to do here!!! I should visit other locations!
+    @stop
+@elseif Quest==3
+    @char Player pos:50,0,0
+	Player: I wonder where everyone has disappeared to? I must find them!!!
+    @set Quest=4
+    @set QuestText="Task 4 - Find your friends."
+    @stop
+@elseIf Quest==5
+    @char Player pos:10,0,0
+    @char NPC2.Default pos:90,0,0
+    @if NPC2mood=="Good"
+        NPC2.Happy: Thank you, my friend, you made the right choice. I will use this weapon for good purposes.
+    @elseIf NPC2mood=="Bad"
+        NPC2.Angry: Why didn't you give me this weapon? We're not friends anymore.
+    @endIf
+    @stop
+@endif

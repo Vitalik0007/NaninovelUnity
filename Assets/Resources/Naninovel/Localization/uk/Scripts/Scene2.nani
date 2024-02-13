@@ -1,0 +1,57 @@
+; English <en> to Ukrainian <uk> localization document for `Scene2` naninovel script
+
+# 9ba540f8
+;     NPC2: Ah, {PlayerName}! Have you come to help me?
+NPC2: Оу, {PlayerName}! Ти прийшла допомогти мені?
+
+# 4af84c3d
+;     Player: Sure, let's play this mini-game.
+Player: Звісно, давай зіграємо в цю міні-гру.
+
+# 231b8ea9
+;     @choice "Start mini-game" goto:.MiniGame
+@choice "Розпочати гру" goto:.MiniGame
+
+# 19522bed
+;     Player: Damn, that was cool.
+Player: Чорт, це було круто.
+
+# 9427ebb8
+;     NPC2: I agree {PlayerName}, we did a great job.
+NPC2: Я згідний {PlayerName}, ми з цим справились.
+
+# 546603fb
+;     NPC2: By the way, if you're not busy, you can go to Location3 and look for the ancient weapon that my friends told me about.
+NPC2: Доречі, якщо ти не зайнята, ти можеш відправитись на Location3 і пошукати древню зброю, про яку мені розповідали друзі.
+
+# d029f26c
+;     Player: Wow, what kind of weapon is this?
+Player: Ого, що це за штука?
+
+# 1289b235
+;     NPC2: People say it's a powerful weapon that can make anyone invincible.
+NPC2: Люди кажуть, що це могутня зброя, яка робить свого власника всемогутнім.
+
+# 2c2b9e1f
+;     @choice "Go in search of weapons" set:Quest=2;QuestText="Task 2 - Find an ancient weapon." goto:Map
+@choice "Відправитись на пошуки зброї" set:Quest=2;QuestText="Завдання 2 - Знайти древню зброю." goto:Map
+
+# ed07e6b2
+;     @choice "Postpone the search for later" goto:Map
+@choice "Відкласти пошук на потім" goto:Map
+
+# c84a4f53
+;     Player: Now I have nothing to do here!!! I should visit other locations!
+Player: Тут мені немає що робити. Потрібно відвідати іншу локацію!
+
+# eb2cc6c5
+; 	Player: I wonder where everyone has disappeared to? I must find them!!!
+Player: Дивно, куди всі зникли( Потрібно скоріш їх знайти!!!
+
+# 3a5ea2a6
+;         NPC2.Happy: Thank you, my friend, you made the right choice. I will use this weapon for good purposes.
+NPC2.Happy: Дякую велике подруго, ти зробила вірний вибір. Я буду використовувати цю зброю для добрих цілей.
+
+# 90c6f531
+;         NPC2.Angry: Why didn't you give me this weapon? We're not friends anymore.
+NPC2.Angry: Чому ти не віддала цю зброю мені? Ми більше не друзі.
